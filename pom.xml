@@ -11,7 +11,7 @@
 
   <groupId>com.jakewharton.byteunits</groupId>
   <artifactId>byteunits</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.9.0-SNAPSHOT</version>
 
   <name>Byte Units</name>
   <description>Utility classes for converting between granularities of SI and IEC byte units and bit units.</description>
