@@ -195,14 +195,14 @@ public enum DecimalByteUnit {
     }
   };
 
-  static final long B = 1L;
-  static final long KB = B * 1000L;
-  static final long MB = KB * 1000L;
-  static final long GB = MB * 1000L;
-  static final long TB = GB * 1000L;
-  static final long PB = TB * 1000L;
+  private static final long B = 1L;
+  private static final long KB = B * 1000L;
+  private static final long MB = KB * 1000L;
+  private static final long GB = MB * 1000L;
+  private static final long TB = GB * 1000L;
+  private static final long PB = TB * 1000L;
 
-  static final long MAX = Long.MAX_VALUE;
+  private static final long MAX = Long.MAX_VALUE;
 
   /**
    * Converts the given size in the given unit to this unit. Conversions from finer to coarser
