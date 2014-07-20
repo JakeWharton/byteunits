@@ -8,7 +8,7 @@ import static com.jakewharton.byteunits.UnitUtil.multiply;
  * byte size information, but only helps organize and use byte size representations that may be
  * maintained separately across various contexts.
  */
-public enum DecimalByteUnit {
+public enum DecimalByteUnit implements ByteUnit {
   /** Byte unit representing one byte. */
   BYTES {
     @Override public long convert(long sourceCount, DecimalByteUnit sourceUnit) {
@@ -220,16 +220,6 @@ public enum DecimalByteUnit {
    * negatively overflow, or {@code Long.MAX_VALUE} if it would positively overflow.
    */
   public long convert(long sourceCount, DecimalByteUnit sourceUnit) {
-    throw new AbstractMethodError();
-  }
-
-  /**
-   * Equivalent to {@link #convert(long, DecimalByteUnit) BYTES.convert(count, this)}.
-   * @param count the bit count
-   * @return the converted count, or {@code Long.MIN_VALUE} if conversion would negatively
-   * overflow, or {@code Long.MAX_VALUE} if it would positively overflow.
-   */
-  public long toBytes(long count) {
     throw new AbstractMethodError();
   }
 

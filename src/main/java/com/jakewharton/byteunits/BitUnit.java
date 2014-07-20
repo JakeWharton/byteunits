@@ -8,11 +8,15 @@ import static com.jakewharton.byteunits.UnitUtil.multiply;
  * but only helps organize and use bit size representations that may be maintained separately
  * across various contexts.
  */
-public enum BitUnit {
+public enum BitUnit implements ByteUnit {
   /** Bit unit representing one bit. */
   BITS {
     @Override public long convert(long sourceCount, BitUnit sourceUnit) {
       return sourceUnit.toBits(sourceCount);
+    }
+
+    @Override public long toBytes(long count) {
+      return count / BYTE;
     }
 
     @Override public long toBits(long count) {
@@ -46,6 +50,10 @@ public enum BitUnit {
       return sourceUnit.toKilobits(sourceCount);
     }
 
+    @Override public long toBytes(long count) {
+      return count * KBYTE;
+    }
+
     @Override public long toBits(long count) {
       return multiply(count, KB / B, MAX / (KB / B));
     }
@@ -75,6 +83,10 @@ public enum BitUnit {
   MEGABITS {
     @Override public long convert(long sourceCount, BitUnit sourceUnit) {
       return sourceUnit.toMegabits(sourceCount);
+    }
+
+    @Override public long toBytes(long count) {
+      return count * MBYTE;
     }
 
     @Override public long toBits(long count) {
@@ -108,6 +120,10 @@ public enum BitUnit {
       return sourceUnit.toGigabits(sourceCount);
     }
 
+    @Override public long toBytes(long count) {
+      return count * GBYTE;
+    }
+
     @Override public long toBits(long count) {
       return multiply(count, GB / B, MAX / (GB / B));
     }
@@ -137,6 +153,10 @@ public enum BitUnit {
   TERABITS {
     @Override public long convert(long sourceCount, BitUnit sourceUnit) {
       return sourceUnit.toTerabits(sourceCount);
+    }
+
+    @Override public long toBytes(long count) {
+      return count * TBYTE;
     }
 
     @Override public long toBits(long count) {
@@ -170,6 +190,10 @@ public enum BitUnit {
       return sourceUnit.toPetabits(sourceCount);
     }
 
+    @Override public long toBytes(long count) {
+      return count * PBYTE;
+    }
+
     @Override public long toBits(long count) {
       return multiply(count, PB / B, MAX / (PB / B));
     }
@@ -201,6 +225,12 @@ public enum BitUnit {
   private static final long GB = MB * 1000L;
   private static final long TB = GB * 1000L;
   private static final long PB = TB * 1000L;
+  private static final long BYTE = B * 8;
+  private static final long KBYTE = 1000L / BYTE;
+  private static final long MBYTE = KBYTE * 1000L;
+  private static final long GBYTE = MBYTE * 1000L;
+  private static final long TBYTE = GBYTE * 1000L;
+  private static final long PBYTE = TBYTE * 1000L;
 
   private static final long MAX = Long.MAX_VALUE;
 
