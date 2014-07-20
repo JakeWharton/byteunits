@@ -6,11 +6,23 @@ and bit units.
 
 
 
-Usage
------
+Example Usage
+-------------
 
+What's the difference in hard drive space between perception and actual?
 ```java
-long bytes = BinaryByteUnit.GIGABYTES.toBytes(4);
+long perception = DecimalByteUnit.TERABYTES.toBytes(2);
+long usable = BinaryByteUnit.TEBIBYTES.toBytes(2);
+long lost = BinaryByteUnit.BYTES.toGibibytes(perception - usable);
+System.out.println(lost + " GiB lost on a 2TB drive.");
+```
+
+Method parameter for specifying a resource size.
+```java
+public void installDiskCache(long count, ByteUnit unit) {
+  long size = unit.toBytes(count);
+  // TODO Install disk cache of 'size' bytes.
+}
 ```
 
 
