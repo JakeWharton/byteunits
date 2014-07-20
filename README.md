@@ -11,8 +11,8 @@ Example Usage
 
 What's the difference in hard drive space between perception and actual?
 ```java
-long perception = DecimalByteUnit.TERABYTES.toBytes(2);
-long usable = BinaryByteUnit.TEBIBYTES.toBytes(2);
+long perception = BinaryByteUnit.TEBIBYTES.toBytes(2);
+long usable = DecimalByteUnit.TERABYTES.toBytes(2);
 long lost = BinaryByteUnit.BYTES.toGibibytes(perception - usable);
 System.out.println(lost + " GiB lost on a 2TB drive.");
 ```
