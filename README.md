@@ -27,6 +27,24 @@ public void installDiskCache(long count, ByteUnit unit) {
 
 
 
+Download
+--------
+
+Grab the [latest .jar][1] or add via Gradle:
+```groovy
+compile 'com.jakewharton.byteunits:byteunits:0.9.0'
+```
+or Maven:
+```xml
+<dependency>
+  <groupId>com.jakewharton.byteunits</groupId>
+  <artifactId>byteunits</artifactId>
+  <version>0.9.0</version>
+</dependency>
+```
+
+
+
 License
 -------
 
@@ -47,3 +65,4 @@ License
 
 
 
+ [1]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.jakewharton.byteunits&a=byteunits&v=LATEST
