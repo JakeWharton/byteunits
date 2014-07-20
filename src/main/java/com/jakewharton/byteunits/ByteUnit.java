@@ -4,6 +4,10 @@ package com.jakewharton.byteunits;
  * A {@code ByteUnit} represents a size at a given unit of granularity which can be converted
  * into bytes. A {@code ByteUnit} does not maintain byte size information, but only helps use byte
  * size representations that may be maintained separately across various contexts.
+ *
+ * @see DecimalByteUnit
+ * @see BinaryByteUnit
+ * @see BitUnit
  */
 public interface ByteUnit {
   /**
