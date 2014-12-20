@@ -43,6 +43,8 @@ or Maven:
 </dependency>
 ```
 
+Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
+
 
 
 License
@@ -65,4 +67,5 @@ License
 
 
 
- [1]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.jakewharton.byteunits&a=byteunits&v=LATEST
+ [1]: https://search.maven.org/remote_content?g=com.jakewharton.byteunits&a=byteunits&v=LATEST
+ [snap]: https://oss.sonatype.org/content/repositories/snapshots/
