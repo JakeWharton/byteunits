@@ -14,6 +14,18 @@
     <property name="message" value="Line has trailing spaces."/>
   </module>
 
+  <!-- Space after 'for' and 'if' -->
+  <module name="RegexpSingleline">
+    <property name="format" value="^\s*(for|if)\b[^ ]"/>
+    <property name="message" value="Space needed before opening parenthesis."/>
+  </module>
+
+  <!-- For each spacing -->
+  <module name="RegexpSingleline">
+    <property name="format" value="^\s*for \(.*?([^ ]:|:[^ ])"/>
+    <property name="message" value="Space needed around ':' character."/>
+  </module>
+
   <module name="TreeWalker">
     <property name="cacheFile" value="${checkstyle.cache.file}"/>
 
@@ -44,7 +56,9 @@
     <module name="IllegalImport"/>
     <!-- defaults to sun.* packages -->
     <module name="RedundantImport"/>
-    <module name="UnusedImports"/>
+    <module name="UnusedImports">
+      <property name="processJavadoc" value="true"/>
+    </module>
 
 
     <!-- Checks for Size Violations.                    -->
@@ -61,8 +75,8 @@
     <module name="GenericWhitespace"/>
     <module name="EmptyForIteratorPad"/>
     <module name="MethodParamPad"/>
-    <module name="NoWhitespaceAfter"/>
-    <module name="NoWhitespaceBefore"/>
+    <!--<module name="NoWhitespaceAfter"/>-->
+    <!--<module name="NoWhitespaceBefore"/>-->
     <module name="OperatorWrap"/>
     <module name="ParenPad"/>
     <module name="TypecastParenPad"/>

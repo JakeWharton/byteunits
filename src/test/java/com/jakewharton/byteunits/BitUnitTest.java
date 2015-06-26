@@ -1,8 +1,13 @@
 package com.jakewharton.byteunits;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class BitUnitTest {
   @Test public void convertInternal() {
@@ -48,6 +53,55 @@ public class BitUnitTest {
       assertEquals(s * 1_000_000_000L, BitUnit.PETABITS.toMegabits(s));
       assertEquals(s * 1_000_000L, BitUnit.PETABITS.toGigabits(s));
       assertEquals(s * 1_000L, BitUnit.PETABITS.toTerabits(s));
+    }
+  }
+
+  @Test public void format() {
+    assertEquals("0 b", BitUnit.format(0));
+    assertEquals("1 b", BitUnit.format(1));
+    assertEquals("1 Kb", BitUnit.format(1000));
+    assertEquals("1 Kb", BitUnit.format(1001));
+    assertEquals("16 Kb", BitUnit.format(16_000));
+    assertEquals("1.2 Mb", BitUnit.format(1_177_171));
+    assertEquals("1.2 Gb", BitUnit.format(1_200_000_000));
+    assertEquals("9,223.4 Pb", BitUnit.format(Long.MAX_VALUE));
+  }
+
+  @Test public void formatWithPattern() {
+    String pattern = "0.0#";
+    assertEquals("0.0 b", BitUnit.format(0, pattern));
+    assertEquals("1.0 b", BitUnit.format(1, pattern));
+    assertEquals("1.0 Kb", BitUnit.format(1000, pattern));
+    assertEquals("1.0 Kb", BitUnit.format(1001, pattern));
+    assertEquals("16.0 Kb", BitUnit.format(16_000, pattern));
+    assertEquals("1.18 Mb", BitUnit.format(1_177_171, pattern));
+  }
+
+  @Test public void formatWithDecimalFormat() {
+    NumberFormat format = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.FRENCH));
+    assertEquals("16 Kb", BitUnit.format(16_000, format));
+    assertEquals("1,18 Mb", BitUnit.format(1_177_171, format));
+  }
+
+  @Test public void formatNegativeValuesThrows() {
+    try {
+      BitUnit.format(-1);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals("bits < 0: -1", e.getMessage());
+    }
+    try {
+      BitUnit.format(-1, "#.##");
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals("bits < 0: -1", e.getMessage());
+    }
+    NumberFormat format = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.FRENCH));
+    try {
+      BitUnit.format(-1, format);
+      fail();
+    } catch (IllegalArgumentException e) {
+      assertEquals("bits < 0: -1", e.getMessage());
     }
   }
 }
