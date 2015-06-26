@@ -25,6 +25,12 @@ public void installDiskCache(long count, ByteUnit unit) {
 }
 ```
 
+Print human-readable strings for byte and bit amounts.
+```java
+long bytes = 2 * 1024 * 1024 * 1024;
+System.out.println(BinaryByteUnit.format(bytes));
+```
+
 
 
 Download
@@ -32,14 +38,14 @@ Download
 
 Grab the [latest .jar][1] or add via Gradle:
 ```groovy
-compile 'com.jakewharton.byteunits:byteunits:0.9.0'
+compile 'com.jakewharton.byteunits:byteunits:0.9.1'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.jakewharton.byteunits</groupId>
   <artifactId>byteunits</artifactId>
-  <version>0.9.0</version>
+  <version>0.9.1</version>
 </dependency>
 ```
 
