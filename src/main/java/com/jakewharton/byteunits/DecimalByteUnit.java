@@ -1,5 +1,9 @@
 package com.jakewharton.byteunits;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+import static com.jakewharton.byteunits.UnitUtil.DEFAULT_FORMAT_PATTERN;
 import static com.jakewharton.byteunits.UnitUtil.multiply;
 
 /**
@@ -271,5 +275,41 @@ public enum DecimalByteUnit implements ByteUnit {
    */
   public long toPetabytes(long count) {
     throw new AbstractMethodError();
+  }
+
+  private static final String[] UNITS = { "B", "KB", "MB", "GB", "TB", "PB" };
+
+  /**
+   * Return {@code bytes} as human-readable size string (e.g., "1.2 GB". This will use a default
+   * {@link DecimalFormat} instance for formatting the number.
+   */
+  public static String format(long bytes) {
+    return format(bytes, new DecimalFormat(DEFAULT_FORMAT_PATTERN));
+  }
+
+  /**
+   * Return {@code bytes} as human-readable size string (e.g., "1.2 GB". This will use a
+   * {@link DecimalFormat} instance with {@code pattern} for formatting the number.
+   */
+  public static String format(long bytes, String pattern) {
+    return format(bytes, new DecimalFormat(pattern));
+  }
+
+  /**
+   * Return {@code bytes} as human-readable size string (e.g., "1.2 GB". This will use {@code
+   * format} for formatting the number.
+   */
+  public static String format(long bytes, NumberFormat format) {
+    if (bytes < 0) {
+      throw new IllegalArgumentException("bytes < 0: " + bytes);
+    }
+
+    int unitIndex = 0;
+    double count = bytes;
+    while (count >= 1000d && unitIndex < UNITS.length - 1) {
+      count /= 1000d;
+      unitIndex += 1;
+    }
+    return format.format(count) + ' ' + UNITS[unitIndex];
   }
 }

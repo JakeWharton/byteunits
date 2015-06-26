@@ -1,6 +1,8 @@
 package com.jakewharton.byteunits;
 
 final class UnitUtil {
+  static final String DEFAULT_FORMAT_PATTERN = "#,##0.#";
+
   /** Multiply {@code size} by {@code factor} accounting for overflow. */
   static long multiply(long size, long factor, long over) {
     if (size > over) {
