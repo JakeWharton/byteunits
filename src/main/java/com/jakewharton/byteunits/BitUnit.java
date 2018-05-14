@@ -3,7 +3,7 @@ package com.jakewharton.byteunits;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import static com.jakewharton.byteunits.UnitUtil.DEFAULT_FORMAT_PATTERN;
+import static com.jakewharton.byteunits.UnitUtil.DEFAULT_FORMAT;
 import static com.jakewharton.byteunits.UnitUtil.multiply;
 
 /**
@@ -324,7 +324,7 @@ public enum BitUnit implements ByteUnit {
    * {@link DecimalFormat} instance for formatting the number.
    */
   public static String format(long bits) {
-    return format(bits, new DecimalFormat(DEFAULT_FORMAT_PATTERN));
+    return format(bits, DEFAULT_FORMAT);
   }
 
   /**
