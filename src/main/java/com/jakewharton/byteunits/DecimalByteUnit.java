@@ -277,7 +277,7 @@ public enum DecimalByteUnit implements ByteUnit {
     throw new AbstractMethodError();
   }
 
-  private static final String[] UNITS = { "B", "KB", "MB", "GB", "TB", "PB" };
+  private static final String[] UNITS = { "B", "kB", "MB", "GB", "TB", "PB" };
 
   /**
    * Return {@code bytes} as human-readable size string (e.g., "1.2 GB". This will use a default

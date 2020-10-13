@@ -53,9 +53,9 @@ public class DecimalByteUnitTest {
   @Test public void format() {
     assertEquals("0 B", DecimalByteUnit.format(0));
     assertEquals("1 B", DecimalByteUnit.format(1));
-    assertEquals("1 KB", DecimalByteUnit.format(1000));
-    assertEquals("1 KB", DecimalByteUnit.format(1001));
-    assertEquals("16 KB", DecimalByteUnit.format(16_000));
+    assertEquals("1 kB", DecimalByteUnit.format(1000));
+    assertEquals("1 kB", DecimalByteUnit.format(1001));
+    assertEquals("16 kB", DecimalByteUnit.format(16_000));
     assertEquals("1.2 MB", DecimalByteUnit.format(1_177_171));
     assertEquals("1.2 GB", DecimalByteUnit.format(1_200_000_000));
     assertEquals("9,223.4 PB", DecimalByteUnit.format(Long.MAX_VALUE));
@@ -65,15 +65,15 @@ public class DecimalByteUnitTest {
     String pattern = "0.0#";
     assertEquals("0.0 B", DecimalByteUnit.format(0, pattern));
     assertEquals("1.0 B", DecimalByteUnit.format(1, pattern));
-    assertEquals("1.0 KB", DecimalByteUnit.format(1000, pattern));
-    assertEquals("1.0 KB", DecimalByteUnit.format(1001, pattern));
-    assertEquals("16.0 KB", DecimalByteUnit.format(16_000, pattern));
+    assertEquals("1.0 kB", DecimalByteUnit.format(1000, pattern));
+    assertEquals("1.0 kB", DecimalByteUnit.format(1001, pattern));
+    assertEquals("16.0 kB", DecimalByteUnit.format(16_000, pattern));
     assertEquals("1.18 MB", DecimalByteUnit.format(1_177_171, pattern));
   }
 
   @Test public void formatWithDecimalFormat() {
     NumberFormat format = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.FRENCH));
-    assertEquals("16 KB", DecimalByteUnit.format(16_000, format));
+    assertEquals("16 kB", DecimalByteUnit.format(16_000, format));
     assertEquals("1,18 MB", DecimalByteUnit.format(1_177_171, format));
   }
 
