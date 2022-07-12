@@ -6,13 +6,13 @@ import com.jakewharton.byteunits.BinaryByteUnit.KIBIBYTES
 import com.jakewharton.byteunits.BinaryByteUnit.MEBIBYTES
 import com.jakewharton.byteunits.BinaryByteUnit.PEBIBYTES
 import com.jakewharton.byteunits.BinaryByteUnit.TEBIBYTES
-import org.junit.Assert.assertEquals
-import org.junit.Assert.fail
-import org.junit.Test
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.text.NumberFormat
 import java.util.Locale
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 class BinaryByteUnitTest {
   @Suppress("KotlinConstantConditions")
@@ -84,24 +84,16 @@ class BinaryByteUnitTest {
   }
 
   @Test fun formatNegativeValuesThrows() {
-    try {
+    assertFailsWith<IllegalArgumentException>(message = "bytes < 0: -1") {
       BinaryByteUnit.format(-1)
-      fail("Should have thrown.")
-    } catch (e: IllegalArgumentException) {
-      assertEquals("bytes < 0: -1", e.message)
     }
-    try {
+    assertFailsWith<IllegalArgumentException>(message = "bytes < 0: -1") {
       BinaryByteUnit.format(-1, "#.##")
-      fail("Should have thrown.")
-    } catch (e: IllegalArgumentException) {
-      assertEquals("bytes < 0: -1", e.message)
     }
+
     val format: NumberFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.FRENCH))
-    try {
+    assertFailsWith<IllegalArgumentException>(message = "bytes < 0: -1") {
       BinaryByteUnit.format(-1, format)
-      fail("Should have thrown.")
-    } catch (e: IllegalArgumentException) {
-      assertEquals("bytes < 0: -1", e.message)
     }
   }
 }

@@ -1,0 +1,9 @@
+[versions]
+kotlin = "1.7.10"
+
+[libraries]
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+
+[plugins]
+mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.18.0" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

@@ -1,24 +1,12 @@
-import org.gradle.internal.jvm.Jvm
-
-buildscript {
-  dependencies {
-    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0'
-    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
-  }
-
-  repositories {
-    mavenCentral()
-    gradlePluginPortal()
-  }
+plugins {
+  alias(libs.plugins.kotlin.jvm)
+  alias(libs.plugins.mavenPublish)
 }
-
-apply plugin: 'org.jetbrains.kotlin.jvm'
-apply plugin: 'com.vanniktech.maven.publish'
 
 repositories {
   mavenCentral()
 }
 
 dependencies {
-  testImplementation 'junit:junit:4.13.1'
+  testImplementation libs.kotlin.test.junit
 }
