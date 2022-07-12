@@ -170,9 +170,7 @@ enum class BinaryByteUnit : ByteUnit {
    * @return the converted size in this unit, or [Long.MIN_VALUE] if conversion would
    * negatively overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit): Long
 
   /**
    * Equivalent to [KIBIBYTES.convert(count, this)][convert].
@@ -180,9 +178,7 @@ enum class BinaryByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toKibibytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toKibibytes(count: Long): Long
 
   /**
    * Equivalent to [MEBIBYTES.convert(count, this)][convert].
@@ -190,9 +186,7 @@ enum class BinaryByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toMebibytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toMebibytes(count: Long): Long
 
   /**
    * Equivalent to [GIBIBYTES.convert(count, this)][convert].
@@ -200,9 +194,7 @@ enum class BinaryByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toGibibytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toGibibytes(count: Long): Long
 
   /**
    * Equivalent to [TEBIBYTES.convert(count, this)][convert].
@@ -210,9 +202,7 @@ enum class BinaryByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toTebibytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toTebibytes(count: Long): Long
 
   /**
    * Equivalent to [PEBIBYTES.convert(count, this)][convert].
@@ -220,9 +210,7 @@ enum class BinaryByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toPebibytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toPebibytes(count: Long): Long
 
   companion object {
     private const val B = 1L
