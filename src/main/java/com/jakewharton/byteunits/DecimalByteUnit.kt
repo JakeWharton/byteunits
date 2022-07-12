@@ -40,7 +40,7 @@ enum class DecimalByteUnit : ByteUnit {
       sourceUnit.toKilobytes(sourceCount)
 
     override fun toBytes(count: Long): Long =
-      UnitUtil.multiply(count, KB / B, MAX / (KB / B))
+      checkedMultiply(count, KB / B, MAX / (KB / B))
 
     override fun toKilobytes(count: Long): Long =
       count
@@ -64,10 +64,10 @@ enum class DecimalByteUnit : ByteUnit {
       sourceUnit.toMegabytes(sourceCount)
 
     override fun toBytes(count: Long): Long =
-      UnitUtil.multiply(count, MB / B, MAX / (MB / B))
+      checkedMultiply(count, MB / B, MAX / (MB / B))
 
     override fun toKilobytes(count: Long): Long =
-      UnitUtil.multiply(count, MB / KB, MAX / (MB / KB))
+      checkedMultiply(count, MB / KB, MAX / (MB / KB))
 
     override fun toMegabytes(count: Long): Long =
       count
@@ -88,13 +88,13 @@ enum class DecimalByteUnit : ByteUnit {
       sourceUnit.toGigabytes(sourceCount)
 
     override fun toBytes(count: Long): Long =
-      UnitUtil.multiply(count, GB / B, MAX / (GB / B))
+      checkedMultiply(count, GB / B, MAX / (GB / B))
 
     override fun toKilobytes(count: Long): Long =
-      UnitUtil.multiply(count, GB / KB, MAX / (GB / KB))
+      checkedMultiply(count, GB / KB, MAX / (GB / KB))
 
     override fun toMegabytes(count: Long): Long =
-      UnitUtil.multiply(count, GB / MB, MAX / (GB / MB))
+      checkedMultiply(count, GB / MB, MAX / (GB / MB))
 
     override fun toGigabytes(count: Long): Long =
       count
@@ -112,16 +112,16 @@ enum class DecimalByteUnit : ByteUnit {
       sourceUnit.toTerabytes(sourceCount)
 
     override fun toBytes(count: Long): Long =
-      UnitUtil.multiply(count, TB / B, MAX / (TB / B))
+      checkedMultiply(count, TB / B, MAX / (TB / B))
 
     override fun toKilobytes(count: Long): Long =
-      UnitUtil.multiply(count, TB / KB, MAX / (TB / KB))
+      checkedMultiply(count, TB / KB, MAX / (TB / KB))
 
     override fun toMegabytes(count: Long): Long =
-      UnitUtil.multiply(count, TB / MB, MAX / (TB / MB))
+      checkedMultiply(count, TB / MB, MAX / (TB / MB))
 
     override fun toGigabytes(count: Long): Long =
-      UnitUtil.multiply(count, TB / GB, MAX / (TB / GB))
+      checkedMultiply(count, TB / GB, MAX / (TB / GB))
 
     override fun toTerabytes(count: Long): Long =
       count
@@ -136,19 +136,19 @@ enum class DecimalByteUnit : ByteUnit {
       sourceUnit.toPetabytes(sourceCount)
 
     override fun toBytes(count: Long): Long =
-      UnitUtil.multiply(count, PB / B, MAX / (PB / B))
+      checkedMultiply(count, PB / B, MAX / (PB / B))
 
     override fun toKilobytes(count: Long): Long =
-      UnitUtil.multiply(count, PB / KB, MAX / (PB / KB))
+      checkedMultiply(count, PB / KB, MAX / (PB / KB))
 
     override fun toMegabytes(count: Long): Long =
-      UnitUtil.multiply(count, PB / MB, MAX / (PB / MB))
+      checkedMultiply(count, PB / MB, MAX / (PB / MB))
 
     override fun toGigabytes(count: Long): Long =
-      UnitUtil.multiply(count, PB / GB, MAX / (PB / GB))
+      checkedMultiply(count, PB / GB, MAX / (PB / GB))
 
     override fun toTerabytes(count: Long): Long =
-      UnitUtil.multiply(count, PB / TB, MAX / (PB / TB))
+      checkedMultiply(count, PB / TB, MAX / (PB / TB))
 
     override fun toPetabytes(count: Long): Long =
       count
@@ -248,7 +248,7 @@ enum class DecimalByteUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(UnitUtil.DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
     ): String {
       require(bytes >= 0) { "bytes < 0: $bytes" }
       var unitIndex = 0
