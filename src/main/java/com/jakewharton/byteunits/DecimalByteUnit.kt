@@ -175,7 +175,7 @@ enum class DecimalByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [KILOBYTES.convert(count, this)][.convert].
+   * Equivalent to [KILOBYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -185,7 +185,7 @@ enum class DecimalByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [MEGABYTES.convert(count, this)][.convert].
+   * Equivalent to [MEGABYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -195,7 +195,7 @@ enum class DecimalByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [GIGABYTES.convert(count, this)][.convert].
+   * Equivalent to [GIGABYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -205,7 +205,7 @@ enum class DecimalByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [TERABYTES.convert(count, this)][.convert].
+   * Equivalent to [TERABYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -215,7 +215,7 @@ enum class DecimalByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [PETABYTES.convert(count, this)][.convert].
+   * Equivalent to [PETABYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
