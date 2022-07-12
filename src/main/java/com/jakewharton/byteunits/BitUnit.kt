@@ -46,7 +46,7 @@ enum class BitUnit : ByteUnit {
       count * KBYTE
 
     override fun toBits(count: Long): Long =
-      UnitUtil.multiply(count, KB / B, MAX / (KB / B))
+      multiply(count, KB / B, MAX / (KB / B))
 
     override fun toKilobits(count: Long): Long =
       count
@@ -73,10 +73,10 @@ enum class BitUnit : ByteUnit {
       count * MBYTE
 
     override fun toBits(count: Long): Long =
-      UnitUtil.multiply(count, MB / B, MAX / (MB / B))
+      multiply(count, MB / B, MAX / (MB / B))
 
     override fun toKilobits(count: Long): Long =
-      UnitUtil.multiply(count, MB / KB, MAX / (MB / KB))
+      multiply(count, MB / KB, MAX / (MB / KB))
 
     override fun toMegabits(count: Long): Long =
       count
@@ -100,13 +100,13 @@ enum class BitUnit : ByteUnit {
       count * GBYTE
 
     override fun toBits(count: Long): Long =
-      UnitUtil.multiply(count, GB / B, MAX / (GB / B))
+      multiply(count, GB / B, MAX / (GB / B))
 
     override fun toKilobits(count: Long): Long =
-      UnitUtil.multiply(count, GB / KB, MAX / (GB / KB))
+      multiply(count, GB / KB, MAX / (GB / KB))
 
     override fun toMegabits(count: Long): Long =
-      UnitUtil.multiply(count, GB / MB, MAX / (GB / MB))
+      multiply(count, GB / MB, MAX / (GB / MB))
 
     override fun toGigabits(count: Long): Long =
       count
@@ -127,16 +127,16 @@ enum class BitUnit : ByteUnit {
       count * TBYTE
 
     override fun toBits(count: Long): Long =
-      UnitUtil.multiply(count, TB / B, MAX / (TB / B))
+      multiply(count, TB / B, MAX / (TB / B))
 
     override fun toKilobits(count: Long): Long =
-      UnitUtil.multiply(count, TB / KB, MAX / (TB / KB))
+      multiply(count, TB / KB, MAX / (TB / KB))
 
     override fun toMegabits(count: Long): Long =
-      UnitUtil.multiply(count, TB / MB, MAX / (TB / MB))
+      multiply(count, TB / MB, MAX / (TB / MB))
 
     override fun toGigabits(count: Long): Long =
-      UnitUtil.multiply(count, TB / GB, MAX / (TB / GB))
+      multiply(count, TB / GB, MAX / (TB / GB))
 
     override fun toTerabits(count: Long): Long =
       count
@@ -154,19 +154,19 @@ enum class BitUnit : ByteUnit {
       count * PBYTE
 
     override fun toBits(count: Long): Long =
-      UnitUtil.multiply(count, PB / B, MAX / (PB / B))
+      multiply(count, PB / B, MAX / (PB / B))
 
     override fun toKilobits(count: Long): Long =
-      UnitUtil.multiply(count, PB / KB, MAX / (PB / KB))
+      multiply(count, PB / KB, MAX / (PB / KB))
 
     override fun toMegabits(count: Long): Long =
-      UnitUtil.multiply(count, PB / MB, MAX / (PB / MB))
+      multiply(count, PB / MB, MAX / (PB / MB))
 
     override fun toGigabits(count: Long): Long =
-      UnitUtil.multiply(count, PB / GB, MAX / (PB / GB))
+      multiply(count, PB / GB, MAX / (PB / GB))
 
     override fun toTerabits(count: Long): Long =
-      UnitUtil.multiply(count, PB / TB, MAX / (PB / TB))
+      multiply(count, PB / TB, MAX / (PB / TB))
 
     override fun toPetabits(count: Long): Long =
       count
@@ -282,7 +282,7 @@ enum class BitUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bits: Long,
-      format: NumberFormat = DecimalFormat(UnitUtil.DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
     ): String {
       require(bits >= 0) { "bits < 0: $bits" }
       var unitIndex = 0
