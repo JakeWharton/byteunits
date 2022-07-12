@@ -6,9 +6,9 @@ import com.jakewharton.byteunits.BitUnit.KILOBITS
 import com.jakewharton.byteunits.BitUnit.MEGABITS
 import com.jakewharton.byteunits.BitUnit.PETABITS
 import com.jakewharton.byteunits.BitUnit.TERABITS
-import org.junit.Assert.assertEquals
-import org.junit.Assert.fail
-import org.junit.Test
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.text.NumberFormat
@@ -85,24 +85,16 @@ class BitUnitTest {
   }
 
   @Test fun formatNegativeValuesThrows() {
-    try {
+    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
       BitUnit.format(-1)
-      fail("Should have thrown.")
-    } catch (e: IllegalArgumentException) {
-      assertEquals("bits < 0: -1", e.message)
     }
-    try {
+    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
       BitUnit.format(-1, "#.##")
-      fail("Should have thrown.")
-    } catch (e: IllegalArgumentException) {
-      assertEquals("bits < 0: -1", e.message)
     }
+
     val format: NumberFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.FRENCH))
-    try {
+    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
       BitUnit.format(-1, format)
-      fail("Should have thrown.")
-    } catch (e: IllegalArgumentException) {
-      assertEquals("bits < 0: -1", e.message)
     }
   }
 }
