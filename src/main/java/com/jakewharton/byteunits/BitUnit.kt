@@ -193,7 +193,7 @@ enum class BitUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [BITS.convert(count, this)][.convert].
+   * Equivalent to [BITS.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -203,7 +203,7 @@ enum class BitUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [KILOBITS.convert(count, this)][.convert].
+   * Equivalent to [KILOBITS.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -213,7 +213,7 @@ enum class BitUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [MEGABITS.convert(count, this)][.convert].
+   * Equivalent to [MEGABITS.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -223,7 +223,7 @@ enum class BitUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [GIGABITS.convert(count, this)][.convert].
+   * Equivalent to [GIGABITS.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -233,7 +233,7 @@ enum class BitUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [TERABITS.convert(count, this)][.convert].
+   * Equivalent to [TERABITS.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -243,7 +243,7 @@ enum class BitUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [PETABITS.convert(count, this)][.convert].
+   * Equivalent to [PETABITS.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.

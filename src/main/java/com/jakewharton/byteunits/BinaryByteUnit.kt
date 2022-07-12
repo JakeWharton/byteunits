@@ -175,7 +175,7 @@ enum class BinaryByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [KIBIBYTES.convert(count, this)][.convert].
+   * Equivalent to [KIBIBYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -185,7 +185,7 @@ enum class BinaryByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [MEBIBYTES.convert(count, this)][.convert].
+   * Equivalent to [MEBIBYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -195,7 +195,7 @@ enum class BinaryByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [GIBIBYTES.convert(count, this)][.convert].
+   * Equivalent to [GIBIBYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -205,7 +205,7 @@ enum class BinaryByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [TEBIBYTES.convert(count, this)][.convert].
+   * Equivalent to [TEBIBYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
@@ -215,7 +215,7 @@ enum class BinaryByteUnit : ByteUnit {
   }
 
   /**
-   * Equivalent to [PEBIBYTES.convert(count, this)][.convert].
+   * Equivalent to [PEBIBYTES.convert(count, this)][convert].
    * [count] the bit count
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
