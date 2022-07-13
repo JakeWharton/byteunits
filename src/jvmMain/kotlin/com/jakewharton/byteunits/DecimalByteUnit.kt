@@ -170,9 +170,7 @@ enum class DecimalByteUnit : ByteUnit {
    * @return the converted size in this unit, or [Long.MIN_VALUE] if conversion would
    * negatively overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long
 
   /**
    * Equivalent to [KILOBYTES.convert(count, this)][convert].
@@ -180,9 +178,7 @@ enum class DecimalByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toKilobytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toKilobytes(count: Long): Long
 
   /**
    * Equivalent to [MEGABYTES.convert(count, this)][convert].
@@ -190,9 +186,7 @@ enum class DecimalByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toMegabytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toMegabytes(count: Long): Long
 
   /**
    * Equivalent to [GIGABYTES.convert(count, this)][convert].
@@ -200,9 +194,7 @@ enum class DecimalByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toGigabytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toGigabytes(count: Long): Long
 
   /**
    * Equivalent to [TERABYTES.convert(count, this)][convert].
@@ -210,9 +202,7 @@ enum class DecimalByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toTerabytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toTerabytes(count: Long): Long
 
   /**
    * Equivalent to [PETABYTES.convert(count, this)][convert].
@@ -220,9 +210,7 @@ enum class DecimalByteUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toPetabytes(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toPetabytes(count: Long): Long
 
   companion object {
     private const val B = 1L

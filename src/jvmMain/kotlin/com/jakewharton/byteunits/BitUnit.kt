@@ -188,9 +188,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted size in this unit, or [Long.MIN_VALUE] if conversion would
    * negatively overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun convert(sourceCount: Long, sourceUnit: BitUnit): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun convert(sourceCount: Long, sourceUnit: BitUnit): Long
 
   /**
    * Equivalent to [BITS.convert(count, this)][convert].
@@ -198,9 +196,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toBits(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toBits(count: Long): Long
 
   /**
    * Equivalent to [KILOBITS.convert(count, this)][convert].
@@ -208,9 +204,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toKilobits(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toKilobits(count: Long): Long
 
   /**
    * Equivalent to [MEGABITS.convert(count, this)][convert].
@@ -218,9 +212,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toMegabits(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toMegabits(count: Long): Long
 
   /**
    * Equivalent to [GIGABITS.convert(count, this)][convert].
@@ -228,9 +220,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toGigabits(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toGigabits(count: Long): Long
 
   /**
    * Equivalent to [TERABITS.convert(count, this)][convert].
@@ -238,9 +228,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toTerabits(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toTerabits(count: Long): Long
 
   /**
    * Equivalent to [PETABITS.convert(count, this)][convert].
@@ -248,9 +236,7 @@ enum class BitUnit : ByteUnit {
    * @return the converted count, or [Long.MIN_VALUE] if conversion would negatively
    * overflow, or [Long.MAX_VALUE] if it would positively overflow.
    */
-  open fun toPetabits(count: Long): Long {
-    throw AbstractMethodError()
-  }
+  abstract fun toPetabits(count: Long): Long
 
   companion object {
     private const val B = 1L
