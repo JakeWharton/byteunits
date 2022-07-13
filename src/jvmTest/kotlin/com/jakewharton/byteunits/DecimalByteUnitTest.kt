@@ -79,16 +79,22 @@ class DecimalByteUnitTest {
   }
 
   @Test fun formatNegativeValuesThrows() {
-    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       DecimalByteUnit.format(-1)
+    }.also {
+      assertEquals("bytes < 0: -1", it.message)
     }
-    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       DecimalByteUnit.format(-1, "#.##")
+    }.also {
+      assertEquals("bytes < 0: -1", it.message)
     }
 
     val format: NumberFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.FRENCH))
-    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       DecimalByteUnit.format(-1, format)
+    }.also {
+      assertEquals("bytes < 0: -1", it.message)
     }
   }
 }
