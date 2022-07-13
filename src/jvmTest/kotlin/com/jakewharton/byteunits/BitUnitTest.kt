@@ -85,16 +85,22 @@ class BitUnitTest {
   }
 
   @Test fun formatNegativeValuesThrows() {
-    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       BitUnit.format(-1)
+    }.also {
+      assertEquals("bits < 0: -1", it.message)
     }
-    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       BitUnit.format(-1, "#.##")
+    }.also {
+      assertEquals("bits < 0: -1", it.message)
     }
 
     val format: NumberFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.FRENCH))
-    assertFailsWith<IllegalArgumentException>(message = "bits < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       BitUnit.format(-1, format)
+    }.also {
+      assertEquals("bits < 0: -1", it.message)
     }
   }
 }

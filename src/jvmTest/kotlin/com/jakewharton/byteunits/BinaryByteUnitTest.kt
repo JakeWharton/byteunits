@@ -84,16 +84,22 @@ class BinaryByteUnitTest {
   }
 
   @Test fun formatNegativeValuesThrows() {
-    assertFailsWith<IllegalArgumentException>(message = "bytes < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       BinaryByteUnit.format(-1)
+    }.also {
+      assertEquals("bytes < 0: -1", it.message)
     }
-    assertFailsWith<IllegalArgumentException>(message = "bytes < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       BinaryByteUnit.format(-1, "#.##")
+    }.also {
+      assertEquals("bytes < 0: -1", it.message)
     }
 
     val format: NumberFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.FRENCH))
-    assertFailsWith<IllegalArgumentException>(message = "bytes < 0: -1") {
+    assertFailsWith<IllegalArgumentException> {
       BinaryByteUnit.format(-1, format)
+    }.also {
+      assertEquals("bytes < 0: -1", it.message)
     }
   }
 }
