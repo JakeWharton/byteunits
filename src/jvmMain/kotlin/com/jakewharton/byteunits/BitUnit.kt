@@ -2,6 +2,7 @@ package com.jakewharton.byteunits
 
 import java.text.DecimalFormat
 import java.text.NumberFormat
+import kotlin.jvm.JvmOverloads
 
 /**
  * A [BitUnit] represents bit size at a given unit of granularity and provides utility
@@ -178,7 +179,6 @@ enum class BitUnit : ByteUnit {
    * kilobits results in `0`. Conversions from coarser to finer granularities with arguments
    * that would numerically overflow saturate to [Long.MIN_VALUE] if negative or
    * [Long.MAX_VALUE] if positive.
-   *
    *
    * For example, to convert 10 kilobytes to bytes, use:
    * `ByteUnit.KILOBITS.convert(10, ByteUnit.BITS)`

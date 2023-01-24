@@ -1,10 +1,12 @@
 [versions]
-kotlin = "1.7.10"
+kotlin = "1.7.21"
 
 [libraries]
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-plugin-animalsniffer = { module = "ru.vyarus:gradle-animalsniffer-plugin", version = "1.5.0" }
+animalSniffer-android = { module = "net.sf.androidscents.signature:android-api-level-15", version = "4.0.3_r5" }
+animalSniffer-java = { module = "org.codehaus.mojo.signature:java17", version = "1.0" }
 
 [plugins]
 mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.18.0" }
+animalsniffer = { id = "ru.vyarus.animalsniffer", version = "1.5.0" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

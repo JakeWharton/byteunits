@@ -2,6 +2,7 @@ package com.jakewharton.byteunits
 
 import java.text.DecimalFormat
 import java.text.NumberFormat
+import kotlin.jvm.JvmOverloads
 
 /**
  * A [DecimalByteUnit] represents power-of-ten byte sizes at a given unit of granularity and
@@ -160,7 +161,6 @@ enum class DecimalByteUnit : ByteUnit {
    * kilobytes results in `0`. Conversions from coarser to finer granularities with arguments
    * that would numerically overflow saturate to [Long.MIN_VALUE] if negative or
    * [Long.MAX_VALUE] if positive.
-   *
    *
    * For example, to convert 10 kilobytes to bytes, use:
    * `ByteUnit.KILOBYTES.convert(10, ByteUnit.BYTES)`

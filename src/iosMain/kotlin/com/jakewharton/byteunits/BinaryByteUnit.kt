@@ -1,8 +1,7 @@
 package com.jakewharton.byteunits
 
-import java.text.DecimalFormat
-import java.text.NumberFormat
-import kotlin.jvm.JvmOverloads
+import platform.Foundation.NSNumber
+import platform.Foundation.NSNumberFormatter
 
 /**
  * A [BinaryByteUnit] represents power-of-two byte sizes at a given unit of granularity and
@@ -145,15 +144,7 @@ actual enum class BinaryByteUnit : ByteUnit {
      * Return `bytes` as human-readable size string (e.g., "1.2 GiB").
      */
     actual fun format(bytes: Long): String {
-      return format(bytes, DEFAULT_FORMAT_PATTERN)
-    }
-
-    /**
-     * Return `bytes` as human-readable size string (e.g., "1.2 GiB". This will use a
-     * [DecimalFormat] instance with `pattern` for formatting the number.
-     */
-    fun format(bytes: Long, pattern: String): String {
-      return format(bytes, DecimalFormat(pattern))
+      return format(bytes, NSNumberFormatter())
     }
 
     /**
@@ -162,10 +153,10 @@ actual enum class BinaryByteUnit : ByteUnit {
      */
     fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
+      formatter: NSNumberFormatter,
     ): String = format(
       bytes = bytes,
-      formatter = { format.format(it) },
+      formatter = { formatter.stringFromNumber(NSNumber(it))!! },
     )
   }
 }
