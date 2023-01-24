@@ -54,7 +54,7 @@ repositories {
 
 // Animal Sniffer only works on JDK 11 or older currently.
 if (Jvm.current().javaVersion?.isJava12Compatible == false) {
-  apply(AnimalSnifferPlugin::class.java)
+  apply(AnimalSnifferPlugin::class)
 
   configure<AnimalSnifferExtension> {
     sourceSets = listOf(project.sourceSets.getByName("main"))
