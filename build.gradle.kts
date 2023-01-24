@@ -1,8 +1,9 @@
 import org.gradle.internal.jvm.Jvm
 import ru.vyarus.gradle.plugin.animalsniffer.AnimalSnifferExtension
+import ru.vyarus.gradle.plugin.animalsniffer.AnimalSnifferPlugin
 
 plugins {
-  alias(libs.plugins.animalsniffer)
+  alias(libs.plugins.animalsniffer) apply false
   alias(libs.plugins.kotlin.multiplatform)
   alias(libs.plugins.mavenPublish)
 }
@@ -53,7 +54,7 @@ repositories {
 
 // Animal Sniffer only works on JDK 11 or older currently.
 if (Jvm.current().javaVersion?.isJava12Compatible == false) {
-  apply("id" to "ru.vyarus.animalsniffer")
+  apply(AnimalSnifferPlugin::class.java)
 
   configure<AnimalSnifferExtension> {
     sourceSets = listOf(project.sourceSets.getByName("main"))
