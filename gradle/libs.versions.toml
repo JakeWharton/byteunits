@@ -3,7 +3,7 @@ kotlin = "1.7.10"
 
 [libraries]
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-plugin-animalsniffer = { module = "ru.vyarus:gradle-animalsniffer-plugin", version = "1.5.0" }
+plugin-animalsniffer = { module = "ru.vyarus:gradle-animalsniffer-plugin", version = "1.6.0" }
 
 [plugins]
 mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.18.0" }
