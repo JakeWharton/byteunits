@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-  testImplementation libs.kotlin.test.junit
+  testImplementation libs.kotlin.test
 }
 
 // Animal Sniffer only works on JDK 11 or older currently.
