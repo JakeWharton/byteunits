@@ -2,7 +2,7 @@
 kotlin = "1.8.0"
 
 [libraries]
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 plugin-animalsniffer = { module = "ru.vyarus:gradle-animalsniffer-plugin", version = "1.6.0" }
 
 [plugins]
