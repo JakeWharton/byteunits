@@ -2,7 +2,7 @@ import org.gradle.internal.jvm.Jvm
 
 buildscript {
   dependencies {
-    classpath 'ru.vyarus:gradle-animalsniffer-plugin:1.5.0'
+    classpath 'ru.vyarus:gradle-animalsniffer-plugin:1.6.0'
   }
 }
 
