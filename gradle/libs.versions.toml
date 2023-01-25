@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.7.21"
+kotlin = "1.8.0"
 
 [libraries]
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -8,5 +8,5 @@ animalSniffer-java = { module = "org.codehaus.mojo.signature:java17", version = 
 
 [plugins]
 mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.18.0" }
-animalsniffer = { id = "ru.vyarus.animalsniffer", version = "1.5.0" }
+animalsniffer = { id = "ru.vyarus.animalsniffer", version = "1.6.0" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
