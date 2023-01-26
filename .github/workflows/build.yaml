@@ -20,7 +20,7 @@ jobs:
           java-version: 11
 
       - uses: gradle/wrapper-validation-action@v1
-      - run: ./gradlew build
+      - run: ./gradlew build --stacktrace
 
       - name: Extract release notes
         id: release_notes
