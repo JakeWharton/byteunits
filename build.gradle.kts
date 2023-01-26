@@ -12,6 +12,7 @@ kotlin {
   jvm {
     withJava() // Required for Animal Sniffer to work.
   }
+  jvmToolchain(11)
 
   iosX64()
   iosArm64()
