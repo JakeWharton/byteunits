@@ -20,13 +20,7 @@ jobs:
           java-version: 11
 
       - uses: gradle/wrapper-validation-action@v1
-      - run: ./gradlew build --stacktrace
-
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3
-        if: always()
-        with:
-          report_paths: '**/build/test-results/**/TEST-*.xml'
+      - run: ./gradlew build
 
       - name: Extract release notes
         id: release_notes
