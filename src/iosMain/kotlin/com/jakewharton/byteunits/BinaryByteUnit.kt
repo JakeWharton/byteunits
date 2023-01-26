@@ -2,6 +2,7 @@ package com.jakewharton.byteunits
 
 import platform.Foundation.NSNumber
 import platform.Foundation.NSNumberFormatter
+import platform.Foundation.NSNumberFormatterDecimalStyle
 
 /**
  * A [BinaryByteUnit] represents power-of-two byte sizes at a given unit of granularity and
@@ -144,7 +145,10 @@ actual enum class BinaryByteUnit : ByteUnit {
      * Return `bytes` as human-readable size string (e.g., "1.2 GiB").
      */
     actual fun format(bytes: Long): String {
-      return format(bytes, NSNumberFormatter())
+      val formatter = NSNumberFormatter()
+      formatter.numberStyle = NSNumberFormatterDecimalStyle
+      formatter.maximumFractionDigits = 1uL
+      return format(bytes, formatter)
     }
 
     /**
