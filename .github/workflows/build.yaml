@@ -22,6 +22,12 @@ jobs:
       - uses: gradle/wrapper-validation-action@v1
       - run: ./gradlew build --stacktrace
 
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v3
+        if: always()
+        with:
+          report_paths: '**/build/test-results/**/TEST-*.xml'
+
       - name: Extract release notes
         id: release_notes
         if: startsWith(github.ref, 'refs/tags/')
@@ -41,9 +47,3 @@ jobs:
         env:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_NEXUS_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_NEXUS_PASSWORD }}
-
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3
-        if: github.repository_owner == 'JakeWharton' # always run even if the previous step fails if the source is from the JakeWharton org
-        with:
-          report_paths: '**/build/test-results/**/TEST-*.xml'
