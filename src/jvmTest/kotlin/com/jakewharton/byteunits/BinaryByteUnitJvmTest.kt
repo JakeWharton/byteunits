@@ -8,7 +8,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class BinaryByteUnitJavaTest {
+class BinaryByteUnitJvmTest {
   @Test fun formatWithPattern() {
     val pattern = "0.0#"
     assertEquals("0.0 B", BinaryByteUnit.format(0, pattern))

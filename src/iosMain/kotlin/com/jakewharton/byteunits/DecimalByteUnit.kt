@@ -1,7 +1,8 @@
 package com.jakewharton.byteunits
 
-import java.text.DecimalFormat
-import java.text.NumberFormat
+import platform.Foundation.NSNumber
+import platform.Foundation.NSNumberFormatter
+import platform.Foundation.NSNumberFormatterDecimalStyle
 
 /**
  * A [DecimalByteUnit] represents power-of-ten byte sizes at a given unit of granularity and
@@ -142,15 +143,10 @@ actual enum class DecimalByteUnit : ByteUnit {
      * Return `bytes` as human-readable size string (e.g., "1.2 GB".
      */
     actual fun format(bytes: Long): String {
-      return format(bytes, DEFAULT_FORMAT_PATTERN)
-    }
-
-    /**
-     * Return `bytes` as human-readable size string (e.g., "1.2 GB". This will use a
-     * [DecimalFormat] instance with `pattern` for formatting the number.
-     */
-    fun format(bytes: Long, pattern: String): String {
-      return format(bytes, DecimalFormat(pattern))
+      val formatter = NSNumberFormatter()
+      formatter.numberStyle = NSNumberFormatterDecimalStyle
+      formatter.maximumFractionDigits = 1uL
+      return format(bytes, formatter)
     }
 
     /**
@@ -159,10 +155,10 @@ actual enum class DecimalByteUnit : ByteUnit {
      */
     fun format(
       bytes: Long,
-      format: NumberFormat,
+      formatter: NSNumberFormatter,
     ): String = formatDecimalByteUnit(
       bytes = bytes,
-      formatter = { format.format(it) },
+      formatter = { formatter.stringFromNumber(NSNumber(it))!! },
     )
   }
 }

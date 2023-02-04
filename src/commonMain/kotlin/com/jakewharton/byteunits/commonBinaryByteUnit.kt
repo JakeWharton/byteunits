@@ -2,7 +2,7 @@ package com.jakewharton.byteunits
 
 private val UNITS = arrayOf("B", "KiB", "MiB", "GiB", "TiB", "PiB")
 
-internal fun format(
+internal fun formatBinaryByteUnit(
   bytes: Long,
   formatter: (Double) -> String,
 ): String {

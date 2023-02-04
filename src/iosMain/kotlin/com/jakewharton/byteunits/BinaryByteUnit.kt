@@ -158,7 +158,7 @@ actual enum class BinaryByteUnit : ByteUnit {
     fun format(
       bytes: Long,
       formatter: NSNumberFormatter,
-    ): String = format(
+    ): String = formatBinaryByteUnit(
       bytes = bytes,
       formatter = { formatter.stringFromNumber(NSNumber(it))!! },
     )

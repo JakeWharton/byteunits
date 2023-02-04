@@ -2,7 +2,6 @@ package com.jakewharton.byteunits
 
 import java.text.DecimalFormat
 import java.text.NumberFormat
-import kotlin.jvm.JvmOverloads
 
 /**
  * A [BinaryByteUnit] represents power-of-two byte sizes at a given unit of granularity and
@@ -162,8 +161,8 @@ actual enum class BinaryByteUnit : ByteUnit {
      */
     fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
-    ): String = format(
+      format: NumberFormat,
+    ): String = formatBinaryByteUnit(
       bytes = bytes,
       formatter = { format.format(it) },
     )
