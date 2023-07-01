@@ -9,7 +9,7 @@ package com.jakewharton.byteunits
  * @see BinaryByteUnit
  * @see BitUnit
  */
-sealed interface ByteUnit {
+interface ByteUnit {
   /**
    * Converts the given size in the given unit to bytes. Conversions with arguments that would
    * numerically overflow saturate to [Long.MIN_VALUE] if negative or [Long.MAX_VALUE]
