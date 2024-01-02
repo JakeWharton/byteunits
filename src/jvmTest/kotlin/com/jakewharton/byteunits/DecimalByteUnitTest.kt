@@ -6,17 +6,18 @@ import com.jakewharton.byteunits.DecimalByteUnit.KILOBYTES
 import com.jakewharton.byteunits.DecimalByteUnit.MEGABYTES
 import com.jakewharton.byteunits.DecimalByteUnit.PETABYTES
 import com.jakewharton.byteunits.DecimalByteUnit.TERABYTES
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.text.NumberFormat
 import java.util.Locale
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 class DecimalByteUnitTest {
   @Suppress("KotlinConstantConditions")
-  @Test fun convertInternal() {
+  @Test
+  fun convertInternal() {
     for (s in 0..998) {
       assertEquals(s / 1000L, BYTES.toKilobytes(s.toLong()))
       assertEquals(s / 1000000L, BYTES.toMegabytes(s.toLong()))

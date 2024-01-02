@@ -1,14 +1,10 @@
 import org.gradle.internal.jvm.Jvm
 
-buildscript {
-  dependencies {
-    classpath 'ru.vyarus:gradle-animalsniffer-plugin:1.7.1'
-  }
-}
-
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
   alias(libs.plugins.mavenPublish)
+  alias(libs.plugins.spotless)
+  alias(libs.plugins.animalsniffer) apply false
 }
 
 kotlin {
@@ -17,8 +13,11 @@ kotlin {
   }
 }
 
-repositories {
-  mavenCentral()
+spotless {
+  kotlin {
+    ktlint(libs.ktlint.get().version)
+    target 'src/**/*.kt'
+  }
 }
 
 dependencies {
@@ -27,7 +26,7 @@ dependencies {
 
 // Animal Sniffer only works on JDK 11 or older currently.
 if (!Jvm.current().javaVersion.isJava12Compatible()) {
-  apply plugin: 'ru.vyarus.animalsniffer'
+  plugins.apply(libs.plugins.animalsniffer.get().pluginId)
 
   animalsniffer {
     sourceSets = [sourceSets.main] // Only check main sources, ignore test code.

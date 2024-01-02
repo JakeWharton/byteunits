@@ -152,7 +152,8 @@ enum class DecimalByteUnit : ByteUnit {
 
     override fun toPetabytes(count: Long): Long =
       count
-  };
+  },
+  ;
 
   /**
    * Converts the given size in the given unit to this unit. Conversions from finer to coarser

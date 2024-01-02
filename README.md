@@ -38,7 +38,7 @@ Download
 
 Grab the [latest .jar][1] or add via Gradle:
 ```groovy
-compile 'com.jakewharton.byteunits:byteunits:0.9.1'
+implementation 'com.jakewharton.byteunits:byteunits:0.9.1'
 ```
 or Maven:
 ```xml

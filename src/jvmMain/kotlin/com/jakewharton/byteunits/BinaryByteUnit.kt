@@ -152,7 +152,8 @@ enum class BinaryByteUnit : ByteUnit {
 
     override fun toPebibytes(count: Long) =
       count
-  };
+  },
+  ;
 
   /**
    * Converts the given size in the given unit to this unit. Conversions from finer to coarser

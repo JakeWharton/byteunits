@@ -170,7 +170,8 @@ enum class BitUnit : ByteUnit {
 
     override fun toPetabits(count: Long): Long =
       count
-  };
+  },
+  ;
 
   /**
    * Converts the given size in the given unit to this unit. Conversions from finer to coarser
