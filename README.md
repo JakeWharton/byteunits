@@ -1,11 +1,6 @@
 Byte Units
 ==========
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.jakewharton.byteunits/byteunits?label=%20&color=success)](https://central.sonatype.com/artifact/com.jakewharton.byteunits/byteunits)
-[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.jakewharton.byteunits/byteunits?label=%20&color=lightgrey&server=https%3A%2F%2Foss.sonatype.org%2F)](https://oss.sonatype.org/content/repositories/snapshots/com/jakewharton/byteunits/byteunits/)
-[![License](https://img.shields.io/github/license/JakeWharton/byteunits)](LICENSE.txt)
-[![CI](https://github.com/JakeWharton/byteunits/actions/workflows/build.yaml/badge.svg?branch=master&event=push)](https://github.com/JakeWharton/byteunits/actions/workflows/build.yaml?query=event:push+branch:master)
-
 Utility classes for converting between granularities of SI and IEC byte units
 and bit units.
 
