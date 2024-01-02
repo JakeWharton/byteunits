@@ -16,7 +16,8 @@ import kotlin.test.assertFailsWith
 
 class BinaryByteUnitTest {
   @Suppress("KotlinConstantConditions")
-  @Test fun convertInternal() {
+  @Test
+  fun convertInternal() {
     for (s in 0..998) {
       assertEquals(s / 1_024L, BYTES.toKibibytes(s.toLong()))
       assertEquals(s / 1_048_576L, BYTES.toMebibytes(s.toLong()))

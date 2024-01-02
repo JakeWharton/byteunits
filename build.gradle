@@ -3,12 +3,20 @@ import org.gradle.internal.jvm.Jvm
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
   alias(libs.plugins.mavenPublish)
+  alias(libs.plugins.spotless)
   alias(libs.plugins.animalsniffer) apply false
 }
 
 kotlin {
   jvm {
     withJava() // Required for Animal Sniffer to work.
+  }
+}
+
+spotless {
+  kotlin {
+    ktlint(libs.ktlint.get().version)
+    target 'src/**/*.kt'
   }
 }
 
