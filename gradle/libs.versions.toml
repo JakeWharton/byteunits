@@ -3,7 +3,7 @@ kotlin = "1.9.22"
 
 [libraries]
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-ktlint = "com.pinterest.ktlint:ktlint-cli:1.2.0"
+ktlint = "com.pinterest.ktlint:ktlint-cli:1.2.1"
 
 [plugins]
 mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.18.0" }
