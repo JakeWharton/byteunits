@@ -17,7 +17,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 11
-      - uses: gradle/actions/setup-gradle@v3
+      - uses: gradle/actions/setup-gradle@v4
       - run: ./gradlew build
 
   publish:
@@ -30,7 +30,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 11
-      - uses: gradle/actions/setup-gradle@v3
+      - uses: gradle/actions/setup-gradle@v4
       - name: Extract release notes
         id: release_notes
         if: startsWith(github.ref, 'refs/tags/')
