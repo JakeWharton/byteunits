@@ -12,7 +12,8 @@ import java.text.NumberFormat
 enum class BinaryByteUnit : ByteUnit {
   /** Byte unit representing one byte. */
   BYTES {
-    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) = sourceUnit.toBytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
+      sourceUnit.toBytes(sourceCount)
 
     override fun toBytes(count: Long) = count
 
@@ -29,7 +30,8 @@ enum class BinaryByteUnit : ByteUnit {
 
   /** A byte unit representing 1024 bytes. */
   KIBIBYTES {
-    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) = sourceUnit.toKibibytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
+      sourceUnit.toKibibytes(sourceCount)
 
     override fun toBytes(count: Long) = checkedMultiply(count, KB / B, MAX / (KB / B))
 
@@ -46,7 +48,8 @@ enum class BinaryByteUnit : ByteUnit {
 
   /** A byte unit representing 1024 kibibytes. */
   MEBIBYTES {
-    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) = sourceUnit.toMebibytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
+      sourceUnit.toMebibytes(sourceCount)
 
     override fun toBytes(count: Long) = checkedMultiply(count, MB / B, MAX / (MB / B))
 
@@ -63,7 +66,8 @@ enum class BinaryByteUnit : ByteUnit {
 
   /** A byte unit representing 1024 mebibytes. */
   GIBIBYTES {
-    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) = sourceUnit.toGibibytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
+      sourceUnit.toGibibytes(sourceCount)
 
     override fun toBytes(count: Long) = checkedMultiply(count, GB / B, MAX / (GB / B))
 
@@ -80,7 +84,8 @@ enum class BinaryByteUnit : ByteUnit {
 
   /** A byte unit representing 1024 gibibytes. */
   TEBIBYTES {
-    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) = sourceUnit.toTebibytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
+      sourceUnit.toTebibytes(sourceCount)
 
     override fun toBytes(count: Long) = checkedMultiply(count, TB / B, MAX / (TB / B))
 
@@ -97,7 +102,8 @@ enum class BinaryByteUnit : ByteUnit {
 
   /** A byte unit representing 1024 tebibytes. */
   PEBIBYTES {
-    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) = sourceUnit.toPebibytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
+      sourceUnit.toPebibytes(sourceCount)
 
     override fun toBytes(count: Long) = checkedMultiply(count, PB / B, MAX / (PB / B))
 
@@ -195,7 +201,9 @@ enum class BinaryByteUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(
+        DEFAULT_FORMAT_PATTERN,
+      ),
     ): String {
       require(bytes >= 0) { "bytes < 0: $bytes" }
       var unitIndex = 0

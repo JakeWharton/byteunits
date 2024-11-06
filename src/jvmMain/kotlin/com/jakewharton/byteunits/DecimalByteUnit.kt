@@ -12,7 +12,8 @@ import java.text.NumberFormat
 enum class DecimalByteUnit : ByteUnit {
   /** Byte unit representing one byte. */
   BYTES {
-    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long = sourceUnit.toBytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
+      sourceUnit.toBytes(sourceCount)
 
     override fun toBytes(count: Long): Long = count
 
@@ -29,7 +30,8 @@ enum class DecimalByteUnit : ByteUnit {
 
   /** A byte unit representing 1000 bytes. */
   KILOBYTES {
-    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long = sourceUnit.toKilobytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
+      sourceUnit.toKilobytes(sourceCount)
 
     override fun toBytes(count: Long): Long = checkedMultiply(count, KB / B, MAX / (KB / B))
 
@@ -46,7 +48,8 @@ enum class DecimalByteUnit : ByteUnit {
 
   /** A byte unit representing 1000 kilobytes. */
   MEGABYTES {
-    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long = sourceUnit.toMegabytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
+      sourceUnit.toMegabytes(sourceCount)
 
     override fun toBytes(count: Long): Long = checkedMultiply(count, MB / B, MAX / (MB / B))
 
@@ -63,7 +66,8 @@ enum class DecimalByteUnit : ByteUnit {
 
   /** A byte unit representing 1000 megabytes. */
   GIGABYTES {
-    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long = sourceUnit.toGigabytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
+      sourceUnit.toGigabytes(sourceCount)
 
     override fun toBytes(count: Long): Long = checkedMultiply(count, GB / B, MAX / (GB / B))
 
@@ -80,7 +84,8 @@ enum class DecimalByteUnit : ByteUnit {
 
   /** A byte unit representing 1000 gigabytes. */
   TERABYTES {
-    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long = sourceUnit.toTerabytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
+      sourceUnit.toTerabytes(sourceCount)
 
     override fun toBytes(count: Long): Long = checkedMultiply(count, TB / B, MAX / (TB / B))
 
@@ -97,7 +102,8 @@ enum class DecimalByteUnit : ByteUnit {
 
   /** A byte unit representing 1000 terabytes. */
   PETABYTES {
-    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long = sourceUnit.toPetabytes(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
+      sourceUnit.toPetabytes(sourceCount)
 
     override fun toBytes(count: Long): Long = checkedMultiply(count, PB / B, MAX / (PB / B))
 
@@ -195,7 +201,9 @@ enum class DecimalByteUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(
+        DEFAULT_FORMAT_PATTERN,
+      ),
     ): String {
       require(bytes >= 0) { "bytes < 0: $bytes" }
       var unitIndex = 0

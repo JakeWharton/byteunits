@@ -12,7 +12,8 @@ import java.text.NumberFormat
 enum class BitUnit : ByteUnit {
   /** Bit unit representing one bit. */
   BITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toBits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
+      sourceUnit.toBits(sourceCount)
 
     override fun toBytes(count: Long): Long = count / BYTE
 
@@ -31,7 +32,8 @@ enum class BitUnit : ByteUnit {
 
   /** A bit unit representing 1000 bits. */
   KILOBITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toKilobits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
+      sourceUnit.toKilobits(sourceCount)
 
     override fun toBytes(count: Long): Long = count * KBYTE
 
@@ -50,7 +52,8 @@ enum class BitUnit : ByteUnit {
 
   /** A bit unit representing 1000 kilobits. */
   MEGABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toMegabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
+      sourceUnit.toMegabits(sourceCount)
 
     override fun toBytes(count: Long): Long = count * MBYTE
 
@@ -69,7 +72,8 @@ enum class BitUnit : ByteUnit {
 
   /** A bit unit representing 1000 megabits. */
   GIGABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toGigabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
+      sourceUnit.toGigabits(sourceCount)
 
     override fun toBytes(count: Long): Long = count * GBYTE
 
@@ -88,7 +92,8 @@ enum class BitUnit : ByteUnit {
 
   /** A bit unit representing 1000 gigabits. */
   TERABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toTerabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
+      sourceUnit.toTerabits(sourceCount)
 
     override fun toBytes(count: Long): Long = count * TBYTE
 
@@ -107,7 +112,8 @@ enum class BitUnit : ByteUnit {
 
   /** A bit unit representing 1000 terabits. */
   PETABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toPetabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
+      sourceUnit.toPetabits(sourceCount)
 
     override fun toBytes(count: Long): Long = count * PBYTE
 
@@ -221,7 +227,9 @@ enum class BitUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bits: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(
+        DEFAULT_FORMAT_PATTERN,
+      ),
     ): String {
       require(bits >= 0) { "bits < 0: $bits" }
       var unitIndex = 0
