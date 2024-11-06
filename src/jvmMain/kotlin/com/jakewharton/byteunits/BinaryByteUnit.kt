@@ -15,23 +15,17 @@ enum class BinaryByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
       sourceUnit.toBytes(sourceCount)
 
-    override fun toBytes(count: Long) =
-      count
+    override fun toBytes(count: Long) = count
 
-    override fun toKibibytes(count: Long) =
-      count / (KB / B)
+    override fun toKibibytes(count: Long) = count / (KB / B)
 
-    override fun toMebibytes(count: Long) =
-      count / (MB / B)
+    override fun toMebibytes(count: Long) = count / (MB / B)
 
-    override fun toGibibytes(count: Long) =
-      count / (GB / B)
+    override fun toGibibytes(count: Long) = count / (GB / B)
 
-    override fun toTebibytes(count: Long) =
-      count / (TB / B)
+    override fun toTebibytes(count: Long) = count / (TB / B)
 
-    override fun toPebibytes(count: Long) =
-      count / (PB / B)
+    override fun toPebibytes(count: Long) = count / (PB / B)
   },
 
   /** A byte unit representing 1024 bytes. */
@@ -39,23 +33,17 @@ enum class BinaryByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
       sourceUnit.toKibibytes(sourceCount)
 
-    override fun toBytes(count: Long) =
-      checkedMultiply(count, KB / B, MAX / (KB / B))
+    override fun toBytes(count: Long) = checkedMultiply(count, KB / B, MAX / (KB / B))
 
-    override fun toKibibytes(count: Long) =
-      count
+    override fun toKibibytes(count: Long) = count
 
-    override fun toMebibytes(count: Long) =
-      count / (MB / KB)
+    override fun toMebibytes(count: Long) = count / (MB / KB)
 
-    override fun toGibibytes(count: Long) =
-      count / (GB / KB)
+    override fun toGibibytes(count: Long) = count / (GB / KB)
 
-    override fun toTebibytes(count: Long) =
-      count / (TB / KB)
+    override fun toTebibytes(count: Long) = count / (TB / KB)
 
-    override fun toPebibytes(count: Long) =
-      count / (PB / KB)
+    override fun toPebibytes(count: Long) = count / (PB / KB)
   },
 
   /** A byte unit representing 1024 kibibytes. */
@@ -63,23 +51,17 @@ enum class BinaryByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
       sourceUnit.toMebibytes(sourceCount)
 
-    override fun toBytes(count: Long) =
-      checkedMultiply(count, MB / B, MAX / (MB / B))
+    override fun toBytes(count: Long) = checkedMultiply(count, MB / B, MAX / (MB / B))
 
-    override fun toKibibytes(count: Long) =
-      checkedMultiply(count, MB / KB, MAX / (MB / KB))
+    override fun toKibibytes(count: Long) = checkedMultiply(count, MB / KB, MAX / (MB / KB))
 
-    override fun toMebibytes(count: Long) =
-      count
+    override fun toMebibytes(count: Long) = count
 
-    override fun toGibibytes(count: Long) =
-      count / (GB / MB)
+    override fun toGibibytes(count: Long) = count / (GB / MB)
 
-    override fun toTebibytes(count: Long) =
-      count / (TB / MB)
+    override fun toTebibytes(count: Long) = count / (TB / MB)
 
-    override fun toPebibytes(count: Long) =
-      count / (PB / MB)
+    override fun toPebibytes(count: Long) = count / (PB / MB)
   },
 
   /** A byte unit representing 1024 mebibytes. */
@@ -87,23 +69,17 @@ enum class BinaryByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
       sourceUnit.toGibibytes(sourceCount)
 
-    override fun toBytes(count: Long) =
-      checkedMultiply(count, GB / B, MAX / (GB / B))
+    override fun toBytes(count: Long) = checkedMultiply(count, GB / B, MAX / (GB / B))
 
-    override fun toKibibytes(count: Long) =
-      checkedMultiply(count, GB / KB, MAX / (GB / KB))
+    override fun toKibibytes(count: Long) = checkedMultiply(count, GB / KB, MAX / (GB / KB))
 
-    override fun toMebibytes(count: Long) =
-      checkedMultiply(count, GB / MB, MAX / (GB / MB))
+    override fun toMebibytes(count: Long) = checkedMultiply(count, GB / MB, MAX / (GB / MB))
 
-    override fun toGibibytes(count: Long) =
-      count
+    override fun toGibibytes(count: Long) = count
 
-    override fun toTebibytes(count: Long) =
-      count / (TB / GB)
+    override fun toTebibytes(count: Long) = count / (TB / GB)
 
-    override fun toPebibytes(count: Long) =
-      count / (PB / GB)
+    override fun toPebibytes(count: Long) = count / (PB / GB)
   },
 
   /** A byte unit representing 1024 gibibytes. */
@@ -111,23 +87,17 @@ enum class BinaryByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
       sourceUnit.toTebibytes(sourceCount)
 
-    override fun toBytes(count: Long) =
-      checkedMultiply(count, TB / B, MAX / (TB / B))
+    override fun toBytes(count: Long) = checkedMultiply(count, TB / B, MAX / (TB / B))
 
-    override fun toKibibytes(count: Long) =
-      checkedMultiply(count, TB / KB, MAX / (TB / KB))
+    override fun toKibibytes(count: Long) = checkedMultiply(count, TB / KB, MAX / (TB / KB))
 
-    override fun toMebibytes(count: Long) =
-      checkedMultiply(count, TB / MB, MAX / (TB / MB))
+    override fun toMebibytes(count: Long) = checkedMultiply(count, TB / MB, MAX / (TB / MB))
 
-    override fun toGibibytes(count: Long) =
-      checkedMultiply(count, TB / GB, MAX / (TB / GB))
+    override fun toGibibytes(count: Long) = checkedMultiply(count, TB / GB, MAX / (TB / GB))
 
-    override fun toTebibytes(count: Long) =
-      count
+    override fun toTebibytes(count: Long) = count
 
-    override fun toPebibytes(count: Long) =
-      count / (PB / TB)
+    override fun toPebibytes(count: Long) = count / (PB / TB)
   },
 
   /** A byte unit representing 1024 tebibytes. */
@@ -135,23 +105,17 @@ enum class BinaryByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: BinaryByteUnit) =
       sourceUnit.toPebibytes(sourceCount)
 
-    override fun toBytes(count: Long) =
-      checkedMultiply(count, PB / B, MAX / (PB / B))
+    override fun toBytes(count: Long) = checkedMultiply(count, PB / B, MAX / (PB / B))
 
-    override fun toKibibytes(count: Long) =
-      checkedMultiply(count, PB / KB, MAX / (PB / KB))
+    override fun toKibibytes(count: Long) = checkedMultiply(count, PB / KB, MAX / (PB / KB))
 
-    override fun toMebibytes(count: Long) =
-      checkedMultiply(count, PB / MB, MAX / (PB / MB))
+    override fun toMebibytes(count: Long) = checkedMultiply(count, PB / MB, MAX / (PB / MB))
 
-    override fun toGibibytes(count: Long) =
-      checkedMultiply(count, PB / GB, MAX / (PB / GB))
+    override fun toGibibytes(count: Long) = checkedMultiply(count, PB / GB, MAX / (PB / GB))
 
-    override fun toTebibytes(count: Long) =
-      checkedMultiply(count, PB / TB, MAX / (PB / TB))
+    override fun toTebibytes(count: Long) = checkedMultiply(count, PB / TB, MAX / (PB / TB))
 
-    override fun toPebibytes(count: Long) =
-      count
+    override fun toPebibytes(count: Long) = count
   },
   ;
 
@@ -237,7 +201,9 @@ enum class BinaryByteUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(
+        DEFAULT_FORMAT_PATTERN,
+      ),
     ): String {
       require(bytes >= 0) { "bytes < 0: $bytes" }
       var unitIndex = 0

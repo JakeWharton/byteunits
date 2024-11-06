@@ -15,23 +15,17 @@ enum class DecimalByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
       sourceUnit.toBytes(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count
+    override fun toBytes(count: Long): Long = count
 
-    override fun toKilobytes(count: Long): Long =
-      count / (KB / B)
+    override fun toKilobytes(count: Long): Long = count / (KB / B)
 
-    override fun toMegabytes(count: Long): Long =
-      count / (MB / B)
+    override fun toMegabytes(count: Long): Long = count / (MB / B)
 
-    override fun toGigabytes(count: Long): Long =
-      count / (GB / B)
+    override fun toGigabytes(count: Long): Long = count / (GB / B)
 
-    override fun toTerabytes(count: Long): Long =
-      count / (TB / B)
+    override fun toTerabytes(count: Long): Long = count / (TB / B)
 
-    override fun toPetabytes(count: Long): Long =
-      count / (PB / B)
+    override fun toPetabytes(count: Long): Long = count / (PB / B)
   },
 
   /** A byte unit representing 1000 bytes. */
@@ -39,23 +33,17 @@ enum class DecimalByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
       sourceUnit.toKilobytes(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      checkedMultiply(count, KB / B, MAX / (KB / B))
+    override fun toBytes(count: Long): Long = checkedMultiply(count, KB / B, MAX / (KB / B))
 
-    override fun toKilobytes(count: Long): Long =
-      count
+    override fun toKilobytes(count: Long): Long = count
 
-    override fun toMegabytes(count: Long): Long =
-      count / (MB / KB)
+    override fun toMegabytes(count: Long): Long = count / (MB / KB)
 
-    override fun toGigabytes(count: Long): Long =
-      count / (GB / KB)
+    override fun toGigabytes(count: Long): Long = count / (GB / KB)
 
-    override fun toTerabytes(count: Long): Long =
-      count / (TB / KB)
+    override fun toTerabytes(count: Long): Long = count / (TB / KB)
 
-    override fun toPetabytes(count: Long): Long =
-      count / (PB / KB)
+    override fun toPetabytes(count: Long): Long = count / (PB / KB)
   },
 
   /** A byte unit representing 1000 kilobytes. */
@@ -63,23 +51,17 @@ enum class DecimalByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
       sourceUnit.toMegabytes(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      checkedMultiply(count, MB / B, MAX / (MB / B))
+    override fun toBytes(count: Long): Long = checkedMultiply(count, MB / B, MAX / (MB / B))
 
-    override fun toKilobytes(count: Long): Long =
-      checkedMultiply(count, MB / KB, MAX / (MB / KB))
+    override fun toKilobytes(count: Long): Long = checkedMultiply(count, MB / KB, MAX / (MB / KB))
 
-    override fun toMegabytes(count: Long): Long =
-      count
+    override fun toMegabytes(count: Long): Long = count
 
-    override fun toGigabytes(count: Long): Long =
-      count / (GB / MB)
+    override fun toGigabytes(count: Long): Long = count / (GB / MB)
 
-    override fun toTerabytes(count: Long): Long =
-      count / (TB / MB)
+    override fun toTerabytes(count: Long): Long = count / (TB / MB)
 
-    override fun toPetabytes(count: Long): Long =
-      count / (PB / MB)
+    override fun toPetabytes(count: Long): Long = count / (PB / MB)
   },
 
   /** A byte unit representing 1000 megabytes. */
@@ -87,23 +69,17 @@ enum class DecimalByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
       sourceUnit.toGigabytes(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      checkedMultiply(count, GB / B, MAX / (GB / B))
+    override fun toBytes(count: Long): Long = checkedMultiply(count, GB / B, MAX / (GB / B))
 
-    override fun toKilobytes(count: Long): Long =
-      checkedMultiply(count, GB / KB, MAX / (GB / KB))
+    override fun toKilobytes(count: Long): Long = checkedMultiply(count, GB / KB, MAX / (GB / KB))
 
-    override fun toMegabytes(count: Long): Long =
-      checkedMultiply(count, GB / MB, MAX / (GB / MB))
+    override fun toMegabytes(count: Long): Long = checkedMultiply(count, GB / MB, MAX / (GB / MB))
 
-    override fun toGigabytes(count: Long): Long =
-      count
+    override fun toGigabytes(count: Long): Long = count
 
-    override fun toTerabytes(count: Long): Long =
-      count / (TB / GB)
+    override fun toTerabytes(count: Long): Long = count / (TB / GB)
 
-    override fun toPetabytes(count: Long): Long =
-      count / (PB / GB)
+    override fun toPetabytes(count: Long): Long = count / (PB / GB)
   },
 
   /** A byte unit representing 1000 gigabytes. */
@@ -111,23 +87,17 @@ enum class DecimalByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
       sourceUnit.toTerabytes(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      checkedMultiply(count, TB / B, MAX / (TB / B))
+    override fun toBytes(count: Long): Long = checkedMultiply(count, TB / B, MAX / (TB / B))
 
-    override fun toKilobytes(count: Long): Long =
-      checkedMultiply(count, TB / KB, MAX / (TB / KB))
+    override fun toKilobytes(count: Long): Long = checkedMultiply(count, TB / KB, MAX / (TB / KB))
 
-    override fun toMegabytes(count: Long): Long =
-      checkedMultiply(count, TB / MB, MAX / (TB / MB))
+    override fun toMegabytes(count: Long): Long = checkedMultiply(count, TB / MB, MAX / (TB / MB))
 
-    override fun toGigabytes(count: Long): Long =
-      checkedMultiply(count, TB / GB, MAX / (TB / GB))
+    override fun toGigabytes(count: Long): Long = checkedMultiply(count, TB / GB, MAX / (TB / GB))
 
-    override fun toTerabytes(count: Long): Long =
-      count
+    override fun toTerabytes(count: Long): Long = count
 
-    override fun toPetabytes(count: Long): Long =
-      count / (PB / TB)
+    override fun toPetabytes(count: Long): Long = count / (PB / TB)
   },
 
   /** A byte unit representing 1000 terabytes. */
@@ -135,23 +105,17 @@ enum class DecimalByteUnit : ByteUnit {
     override fun convert(sourceCount: Long, sourceUnit: DecimalByteUnit): Long =
       sourceUnit.toPetabytes(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      checkedMultiply(count, PB / B, MAX / (PB / B))
+    override fun toBytes(count: Long): Long = checkedMultiply(count, PB / B, MAX / (PB / B))
 
-    override fun toKilobytes(count: Long): Long =
-      checkedMultiply(count, PB / KB, MAX / (PB / KB))
+    override fun toKilobytes(count: Long): Long = checkedMultiply(count, PB / KB, MAX / (PB / KB))
 
-    override fun toMegabytes(count: Long): Long =
-      checkedMultiply(count, PB / MB, MAX / (PB / MB))
+    override fun toMegabytes(count: Long): Long = checkedMultiply(count, PB / MB, MAX / (PB / MB))
 
-    override fun toGigabytes(count: Long): Long =
-      checkedMultiply(count, PB / GB, MAX / (PB / GB))
+    override fun toGigabytes(count: Long): Long = checkedMultiply(count, PB / GB, MAX / (PB / GB))
 
-    override fun toTerabytes(count: Long): Long =
-      checkedMultiply(count, PB / TB, MAX / (PB / TB))
+    override fun toTerabytes(count: Long): Long = checkedMultiply(count, PB / TB, MAX / (PB / TB))
 
-    override fun toPetabytes(count: Long): Long =
-      count
+    override fun toPetabytes(count: Long): Long = count
   },
   ;
 
@@ -237,7 +201,9 @@ enum class DecimalByteUnit : ByteUnit {
      */
     @JvmOverloads fun format(
       bytes: Long,
-      format: NumberFormat = DecimalFormat(DEFAULT_FORMAT_PATTERN),
+      format: NumberFormat = DecimalFormat(
+        DEFAULT_FORMAT_PATTERN,
+      ),
     ): String {
       require(bytes >= 0) { "bytes < 0: $bytes" }
       var unitIndex = 0
