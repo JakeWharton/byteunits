@@ -12,164 +12,116 @@ import java.text.NumberFormat
 enum class BitUnit : ByteUnit {
   /** Bit unit representing one bit. */
   BITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
-      sourceUnit.toBits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toBits(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count / BYTE
+    override fun toBytes(count: Long): Long = count / BYTE
 
-    override fun toBits(count: Long): Long =
-      count
+    override fun toBits(count: Long): Long = count
 
-    override fun toKilobits(count: Long): Long =
-      count / (KB / B)
+    override fun toKilobits(count: Long): Long = count / (KB / B)
 
-    override fun toMegabits(count: Long): Long =
-      count / (MB / B)
+    override fun toMegabits(count: Long): Long = count / (MB / B)
 
-    override fun toGigabits(count: Long): Long =
-      count / (GB / B)
+    override fun toGigabits(count: Long): Long = count / (GB / B)
 
-    override fun toTerabits(count: Long): Long =
-      count / (TB / B)
+    override fun toTerabits(count: Long): Long = count / (TB / B)
 
-    override fun toPetabits(count: Long): Long =
-      count / (PB / B)
+    override fun toPetabits(count: Long): Long = count / (PB / B)
   },
 
   /** A bit unit representing 1000 bits. */
   KILOBITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
-      sourceUnit.toKilobits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toKilobits(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count * KBYTE
+    override fun toBytes(count: Long): Long = count * KBYTE
 
-    override fun toBits(count: Long): Long =
-      checkedMultiply(count, KB / B, MAX / (KB / B))
+    override fun toBits(count: Long): Long = checkedMultiply(count, KB / B, MAX / (KB / B))
 
-    override fun toKilobits(count: Long): Long =
-      count
+    override fun toKilobits(count: Long): Long = count
 
-    override fun toMegabits(count: Long): Long =
-      count / (MB / KB)
+    override fun toMegabits(count: Long): Long = count / (MB / KB)
 
-    override fun toGigabits(count: Long): Long =
-      count / (GB / KB)
+    override fun toGigabits(count: Long): Long = count / (GB / KB)
 
-    override fun toTerabits(count: Long): Long =
-      count / (TB / KB)
+    override fun toTerabits(count: Long): Long = count / (TB / KB)
 
-    override fun toPetabits(count: Long): Long =
-      count / (PB / KB)
+    override fun toPetabits(count: Long): Long = count / (PB / KB)
   },
 
   /** A bit unit representing 1000 kilobits. */
   MEGABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
-      sourceUnit.toMegabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toMegabits(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count * MBYTE
+    override fun toBytes(count: Long): Long = count * MBYTE
 
-    override fun toBits(count: Long): Long =
-      checkedMultiply(count, MB / B, MAX / (MB / B))
+    override fun toBits(count: Long): Long = checkedMultiply(count, MB / B, MAX / (MB / B))
 
-    override fun toKilobits(count: Long): Long =
-      checkedMultiply(count, MB / KB, MAX / (MB / KB))
+    override fun toKilobits(count: Long): Long = checkedMultiply(count, MB / KB, MAX / (MB / KB))
 
-    override fun toMegabits(count: Long): Long =
-      count
+    override fun toMegabits(count: Long): Long = count
 
-    override fun toGigabits(count: Long): Long =
-      count / (GB / MB)
+    override fun toGigabits(count: Long): Long = count / (GB / MB)
 
-    override fun toTerabits(count: Long): Long =
-      count / (TB / MB)
+    override fun toTerabits(count: Long): Long = count / (TB / MB)
 
-    override fun toPetabits(count: Long): Long =
-      count / (PB / MB)
+    override fun toPetabits(count: Long): Long = count / (PB / MB)
   },
 
   /** A bit unit representing 1000 megabits. */
   GIGABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
-      sourceUnit.toGigabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toGigabits(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count * GBYTE
+    override fun toBytes(count: Long): Long = count * GBYTE
 
-    override fun toBits(count: Long): Long =
-      checkedMultiply(count, GB / B, MAX / (GB / B))
+    override fun toBits(count: Long): Long = checkedMultiply(count, GB / B, MAX / (GB / B))
 
-    override fun toKilobits(count: Long): Long =
-      checkedMultiply(count, GB / KB, MAX / (GB / KB))
+    override fun toKilobits(count: Long): Long = checkedMultiply(count, GB / KB, MAX / (GB / KB))
 
-    override fun toMegabits(count: Long): Long =
-      checkedMultiply(count, GB / MB, MAX / (GB / MB))
+    override fun toMegabits(count: Long): Long = checkedMultiply(count, GB / MB, MAX / (GB / MB))
 
-    override fun toGigabits(count: Long): Long =
-      count
+    override fun toGigabits(count: Long): Long = count
 
-    override fun toTerabits(count: Long): Long =
-      count / (TB / GB)
+    override fun toTerabits(count: Long): Long = count / (TB / GB)
 
-    override fun toPetabits(count: Long): Long =
-      count / (PB / GB)
+    override fun toPetabits(count: Long): Long = count / (PB / GB)
   },
 
   /** A bit unit representing 1000 gigabits. */
   TERABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
-      sourceUnit.toTerabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toTerabits(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count * TBYTE
+    override fun toBytes(count: Long): Long = count * TBYTE
 
-    override fun toBits(count: Long): Long =
-      checkedMultiply(count, TB / B, MAX / (TB / B))
+    override fun toBits(count: Long): Long = checkedMultiply(count, TB / B, MAX / (TB / B))
 
-    override fun toKilobits(count: Long): Long =
-      checkedMultiply(count, TB / KB, MAX / (TB / KB))
+    override fun toKilobits(count: Long): Long = checkedMultiply(count, TB / KB, MAX / (TB / KB))
 
-    override fun toMegabits(count: Long): Long =
-      checkedMultiply(count, TB / MB, MAX / (TB / MB))
+    override fun toMegabits(count: Long): Long = checkedMultiply(count, TB / MB, MAX / (TB / MB))
 
-    override fun toGigabits(count: Long): Long =
-      checkedMultiply(count, TB / GB, MAX / (TB / GB))
+    override fun toGigabits(count: Long): Long = checkedMultiply(count, TB / GB, MAX / (TB / GB))
 
-    override fun toTerabits(count: Long): Long =
-      count
+    override fun toTerabits(count: Long): Long = count
 
-    override fun toPetabits(count: Long): Long =
-      count / (PB / TB)
+    override fun toPetabits(count: Long): Long = count / (PB / TB)
   },
 
   /** A bit unit representing 1000 terabits. */
   PETABITS {
-    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long =
-      sourceUnit.toPetabits(sourceCount)
+    override fun convert(sourceCount: Long, sourceUnit: BitUnit): Long = sourceUnit.toPetabits(sourceCount)
 
-    override fun toBytes(count: Long): Long =
-      count * PBYTE
+    override fun toBytes(count: Long): Long = count * PBYTE
 
-    override fun toBits(count: Long): Long =
-      checkedMultiply(count, PB / B, MAX / (PB / B))
+    override fun toBits(count: Long): Long = checkedMultiply(count, PB / B, MAX / (PB / B))
 
-    override fun toKilobits(count: Long): Long =
-      checkedMultiply(count, PB / KB, MAX / (PB / KB))
+    override fun toKilobits(count: Long): Long = checkedMultiply(count, PB / KB, MAX / (PB / KB))
 
-    override fun toMegabits(count: Long): Long =
-      checkedMultiply(count, PB / MB, MAX / (PB / MB))
+    override fun toMegabits(count: Long): Long = checkedMultiply(count, PB / MB, MAX / (PB / MB))
 
-    override fun toGigabits(count: Long): Long =
-      checkedMultiply(count, PB / GB, MAX / (PB / GB))
+    override fun toGigabits(count: Long): Long = checkedMultiply(count, PB / GB, MAX / (PB / GB))
 
-    override fun toTerabits(count: Long): Long =
-      checkedMultiply(count, PB / TB, MAX / (PB / TB))
+    override fun toTerabits(count: Long): Long = checkedMultiply(count, PB / TB, MAX / (PB / TB))
 
-    override fun toPetabits(count: Long): Long =
-      count
+    override fun toPetabits(count: Long): Long = count
   },
   ;
 
