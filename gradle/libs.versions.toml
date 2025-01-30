@@ -8,5 +8,5 @@ ktlint = "com.pinterest.ktlint:ktlint-cli:1.5.0"
 [plugins]
 mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.18.0" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-animalsniffer = "ru.vyarus.animalsniffer:1.7.2"
+animalsniffer = "ru.vyarus.animalsniffer:2.0.0"
 spotless = "com.diffplug.spotless:7.0.2"
