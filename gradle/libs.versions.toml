@@ -1,12 +1,7 @@
-[versions]
-kotlin = "2.1.21"
-
 [libraries]
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-ktlint = "com.pinterest.ktlint:ktlint-cli:1.6.0"
+kotlin-gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21"
 
-[plugins]
-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.32.0" }
-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-animalsniffer = "ru.vyarus.animalsniffer:2.0.1"
-spotless = "com.diffplug.spotless:7.0.4"
+ktlint = "com.pinterest.ktlint:ktlint-cli:1.6.0"
+mavenPublishPlugin = "com.vanniktech:gradle-maven-publish-plugin:0.32.0"
+spotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:7.0.4"
+animalSnifferPlugin = "ru.vyarus:gradle-animalsniffer-plugin:2.0.1"

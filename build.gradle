@@ -1,16 +1,48 @@
-import org.gradle.internal.jvm.Jvm
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-plugins {
-  alias(libs.plugins.kotlin.multiplatform)
-  alias(libs.plugins.mavenPublish)
-  alias(libs.plugins.spotless)
-  alias(libs.plugins.animalsniffer) apply false
+buildscript {
+  dependencies {
+    classpath libs.kotlin.gradlePlugin
+    classpath libs.mavenPublishPlugin
+    classpath libs.spotlessPlugin
+    classpath libs.animalSnifferPlugin
+  }
+  repositories {
+    mavenCentral()
+  }
 }
 
+apply plugin: 'org.jetbrains.kotlin.multiplatform'
+apply plugin: 'com.vanniktech.maven.publish'
+apply plugin: 'com.diffplug.spotless'
+apply plugin: 'ru.vyarus.animalsniffer'
+
 kotlin {
-  jvm {
-    withJava() // Required for Animal Sniffer to work.
+  jvm()
+
+  sourceSets {
+    commonTest {
+      dependencies {
+        implementation 'org.jetbrains.kotlin:kotlin-test'
+      }
+    }
   }
+}
+
+tasks.withType(KotlinCompile).configureEach {
+  compilerOptions {
+    jvmTarget = JvmTarget.JVM_1_8
+    freeCompilerArgs.addAll([
+      '-progressive',
+      '-Xjvm-default=all',
+    ])
+  }
+}
+
+tasks.withType(JavaCompile).configureEach {
+  sourceCompatibility = JavaVersion.VERSION_1_8.toString()
+  targetCompatibility = JavaVersion.VERSION_1_8.toString()
 }
 
 spotless {
@@ -25,18 +57,6 @@ spotless {
 }
 
 dependencies {
-  testImplementation libs.kotlin.test.junit
-}
-
-// Animal Sniffer only works on JDK 11 or older currently.
-if (!Jvm.current().javaVersion.isJava12Compatible()) {
-  plugins.apply(libs.plugins.animalsniffer.get().pluginId)
-
-  animalsniffer {
-    sourceSets = [sourceSets.main] // Only check main sources, ignore test code.
-  }
-  dependencies {
-    signature 'org.codehaus.mojo.signature:java18:1.0@signature'
-    signature 'net.sf.androidscents.signature:android-api-level-21:5.0.1_r2@signature'
-  }
+  signature 'org.codehaus.mojo.signature:java18:1.0@signature'
+  signature 'net.sf.androidscents.signature:android-api-level-21:5.0.1_r2@signature'
 }
