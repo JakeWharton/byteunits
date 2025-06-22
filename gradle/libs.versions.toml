@@ -2,6 +2,6 @@
 kotlin-gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21"
 
 ktlint = "com.pinterest.ktlint:ktlint-cli:1.6.0"
-mavenPublishPlugin = "com.vanniktech:gradle-maven-publish-plugin:0.32.0"
+mavenPublishPlugin = "com.vanniktech:gradle-maven-publish-plugin:0.33.0"
 spotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:7.0.4"
 animalSnifferPlugin = "ru.vyarus:gradle-animalsniffer-plugin:2.0.1"
