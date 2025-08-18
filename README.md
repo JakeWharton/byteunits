@@ -4,6 +4,8 @@ Byte Units
 Utility classes for converting between granularities of SI and IEC byte units
 and bit units.
 
+**Deprecated!** Prefer https://github.com/saket/byte-size instead.
+
 
 
 Example Usage
